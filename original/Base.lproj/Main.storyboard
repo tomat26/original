@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0zX-r8-qlt">
-                                <rect key="frame" x="16" y="280" width="360" height="480"/>
+                                <rect key="frame" x="16" y="273" width="361" height="419"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="480" id="11s-b2-DXo"/>
@@ -43,6 +43,9 @@
                             <constraint firstItem="0zX-r8-qlt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="180" id="m6k-9e-d1M"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="0zX-r8-qlt" id="Jov-X3-i17"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
