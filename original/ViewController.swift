@@ -29,7 +29,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCell", for: indexPath)
         
         if let cell = cell as? PostCell {
-            cell.setupCell(imageName: )
+//            cell.setupCell(imageName: )
         }
         
         return cell
