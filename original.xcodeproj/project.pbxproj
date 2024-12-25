@@ -16,6 +16,7 @@
 		1D6EBFBF2CE7547A001161E0 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D6EBFBE2CE7547A001161E0 /* PostCell.xib */; };
 		1D6EBFC02CE7547A001161E0 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6EBFBD2CE7547A001161E0 /* PostCell.swift */; };
 		1DDB13C12D03096F00A2CD08 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDB13C02D03096F00A2CD08 /* DummyData.swift */; };
+		1DDB13C52D0C3D9200A2CD08 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDB13C42D0C3D9200A2CD08 /* CameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		1D6EBFBD2CE7547A001161E0 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		1D6EBFBE2CE7547A001161E0 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		1DDB13C02D03096F00A2CD08 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
+		1DDB13C42D0C3D9200A2CD08 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				1D6EBFA12CCBAD1F001161E0 /* AppDelegate.swift */,
 				1D6EBFA32CCBAD1F001161E0 /* SceneDelegate.swift */,
 				1D6EBFA52CCBAD1F001161E0 /* ViewController.swift */,
+				1DDB13C42D0C3D9200A2CD08 /* CameraViewController.swift */,
 				1DDB13C02D03096F00A2CD08 /* DummyData.swift */,
 				1D6EBFA72CCBAD1F001161E0 /* Main.storyboard */,
 				1D6EBFBD2CE7547A001161E0 /* PostCell.swift */,
@@ -153,6 +156,7 @@
 				1D6EBFA22CCBAD1F001161E0 /* AppDelegate.swift in Sources */,
 				1D6EBFA42CCBAD1F001161E0 /* SceneDelegate.swift in Sources */,
 				1D6EBFC02CE7547A001161E0 /* PostCell.swift in Sources */,
+				1DDB13C52D0C3D9200A2CD08 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +310,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = original/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "カメラを起動します";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -333,6 +338,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = original/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "カメラを起動します";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
