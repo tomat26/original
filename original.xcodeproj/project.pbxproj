@@ -17,6 +17,7 @@
 		1D6EBFC02CE7547A001161E0 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6EBFBD2CE7547A001161E0 /* PostCell.swift */; };
 		1DDB13C12D03096F00A2CD08 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDB13C02D03096F00A2CD08 /* DummyData.swift */; };
 		1DDB13C52D0C3D9200A2CD08 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDB13C42D0C3D9200A2CD08 /* CameraViewController.swift */; };
+		1DDB13C72D1E384300A2CD08 /* DelaGothicOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DDB13C62D1E384300A2CD08 /* DelaGothicOne-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		1D6EBFBE2CE7547A001161E0 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		1DDB13C02D03096F00A2CD08 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		1DDB13C42D0C3D9200A2CD08 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		1DDB13C62D1E384300A2CD08 /* DelaGothicOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DelaGothicOne-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				1D6EBFAA2CCBAD20001161E0 /* Assets.xcassets */,
 				1D6EBFAC2CCBAD20001161E0 /* LaunchScreen.storyboard */,
 				1D6EBFAF2CCBAD20001161E0 /* Info.plist */,
+				1DDB13C62D1E384300A2CD08 /* DelaGothicOne-Regular.ttf */,
 			);
 			path = original;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 				1D6EBFAB2CCBAD20001161E0 /* Assets.xcassets in Resources */,
 				1D6EBFAE2CCBAD20001161E0 /* Base in Resources */,
 				1D6EBFA92CCBAD1F001161E0 /* Base in Resources */,
+				1DDB13C72D1E384300A2CD08 /* DelaGothicOne-Regular.ttf in Resources */,
 				1D6EBFBF2CE7547A001161E0 /* PostCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,9 +312,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XFY23WQ4LK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = original/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "カメラを起動します";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "フォトライブラリへの許可をしてください";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -321,7 +328,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.sekido.saki.original;
+				PRODUCT_BUNDLE_IDENTIFIER = app.sekido.saki.original1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -336,9 +343,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XFY23WQ4LK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = original/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "カメラを起動します";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "フォトライブラリへの許可をしてください";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -349,7 +359,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.sekido.saki.original;
+				PRODUCT_BUNDLE_IDENTIFIER = app.sekido.saki.original1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
