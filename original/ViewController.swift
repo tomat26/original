@@ -65,7 +65,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         
         // ランダムな時間を作成（朝8時から夜8時まで）
-        let hour = 23/*Int.random(in: 8...20)*/
+        let hour = Int.random(in: 8...20)
         
         var messages: [String] = []
         
@@ -74,7 +74,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             messages = morningMessages
         case 12...17:
             messages = afternoonMessages
-        case 18...24:
+        case 18...20:
             messages = nightMessages
         default:
             messages = [] // 時間外
