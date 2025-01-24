@@ -16,14 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0zX-r8-qlt">
-                                <rect key="frame" x="180" y="273" width="33" height="419"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0zX-r8-qlt">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="480" id="11s-b2-DXo"/>
-                                    <constraint firstAttribute="width" constant="360" id="GEY-84-K0Q"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="360" id="wYf-mD-3Ms"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Cvd-TU-ZnJ">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -35,13 +31,6 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="0zX-r8-qlt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="180" id="4MV-TB-OJu"/>
-                            <constraint firstItem="0zX-r8-qlt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="180" id="Nsr-HF-QVL"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0zX-r8-qlt" secondAttribute="trailing" constant="180" id="aZ4-P3-jgZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0zX-r8-qlt" secondAttribute="trailing" constant="180" id="l8S-MD-2K4"/>
-                            <constraint firstItem="0zX-r8-qlt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="180" id="m6k-9e-d1M"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="house" catalog="system" selectedImage="house.fill" id="8Il-vW-bDD"/>
                     <connections>
@@ -50,7 +39,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057.2519083969464" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="1052.6717557251909" y="-27.464788732394368"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="vY5-52-bfp">

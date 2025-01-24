@@ -31,11 +31,11 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         missionLabel4.isHidden = true
         saveButton.isHidden = true
         
-        missions =
-        ["今日の服を写そう"]
+//        missions =
+//        ["今日の服を写そう"]
         
-//        missions = ["水や鏡などに映った面白い反射を撮ってみよう","写真の中に自分の指を隠して撮影してみよう","わざと写真を逆さまにして撮ってみよう","しましま模様があるものを見つけよう", "日本的なものを撮影してみよう", "未来を感じさせる何かを撮影しよう", "左右対称の構図で撮影してみよう", "何かのマークやロゴを見つけて撮影しよう", "今日の服を写そう", "英語が書かれているものを見つけて撮影", "ミッションが見つかりませんでした" ]
-        number = Int.random(in: 0..<missions.count)
+        missions = ["水や鏡などに映った面白い反射を撮ってみよう","写真の中に自分の指を隠して撮影してみよう","わざと写真を逆さまにして撮ってみよう","しましま模様があるものを見つけよう", "日本的なものを撮影してみよう", "未来を感じさせる何かを撮影しよう", "左右対称の構図で撮影してみよう", "何かのマークやロゴを見つけて撮影しよう", "今日の服を写そう", "英語が書かれているものを見つけて撮影", "ミッションが見つかりませんでした" ]
+        number = Int.random(in: 0..<missions.count-1)
         showMission = missions[number]
         
         
@@ -136,9 +136,12 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         let textFontAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont(name: "DelaGothicOne-Regular", size: fontSize)!,
             .foregroundColor: UIColor.white
+            
 
         ]
         
+//        fontSize.adjustsFontSizeToFitWidth = true
+//        
         // テキストのサイズを計算
             let textSize = text.size(withAttributes: textFontAttributes)
 //            

@@ -15,6 +15,9 @@
 		1D6EBFAE2CCBAD20001161E0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1D6EBFAD2CCBAD20001161E0 /* Base */; };
 		1D6EBFBF2CE7547A001161E0 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D6EBFBE2CE7547A001161E0 /* PostCell.xib */; };
 		1D6EBFC02CE7547A001161E0 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6EBFBD2CE7547A001161E0 /* PostCell.swift */; };
+		1DB486A72D3A496300413EB5 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB486A62D3A496300413EB5 /* UserNotifications.framework */; };
+		1DB486A92D3A497E00413EB5 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB486A82D3A497E00413EB5 /* UserNotificationsUI.framework */; };
+		1DB486CC2D439A2800413EB5 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB486CB2D439A2800413EB5 /* Post.swift */; };
 		1DDB13C12D03096F00A2CD08 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDB13C02D03096F00A2CD08 /* DummyData.swift */; };
 		1DDB13C52D0C3D9200A2CD08 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDB13C42D0C3D9200A2CD08 /* CameraViewController.swift */; };
 		1DDB13C72D1E384300A2CD08 /* DelaGothicOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DDB13C62D1E384300A2CD08 /* DelaGothicOne-Regular.ttf */; };
@@ -31,6 +34,9 @@
 		1D6EBFAF2CCBAD20001161E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D6EBFBD2CE7547A001161E0 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		1D6EBFBE2CE7547A001161E0 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		1DB486A62D3A496300413EB5 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		1DB486A82D3A497E00413EB5 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		1DB486CB2D439A2800413EB5 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		1DDB13C02D03096F00A2CD08 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		1DDB13C42D0C3D9200A2CD08 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		1DDB13C62D1E384300A2CD08 /* DelaGothicOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DelaGothicOne-Regular.ttf"; sourceTree = "<group>"; };
@@ -41,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DB486A92D3A497E00413EB5 /* UserNotificationsUI.framework in Frameworks */,
+				1DB486A72D3A496300413EB5 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,8 +58,10 @@
 		1D6EBF952CCBAD1F001161E0 = {
 			isa = PBXGroup;
 			children = (
+				1DB486CA2D4399E900413EB5 /* Model */,
 				1D6EBFA02CCBAD1F001161E0 /* original */,
 				1D6EBF9F2CCBAD1F001161E0 /* Products */,
+				1DB486A52D3A496200413EB5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +90,23 @@
 				1DDB13C62D1E384300A2CD08 /* DelaGothicOne-Regular.ttf */,
 			);
 			path = original;
+			sourceTree = "<group>";
+		};
+		1DB486A52D3A496200413EB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DB486A82D3A497E00413EB5 /* UserNotificationsUI.framework */,
+				1DB486A62D3A496300413EB5 /* UserNotifications.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1DB486CA2D4399E900413EB5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1DB486CB2D439A2800413EB5 /* Post.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +187,7 @@
 				1D6EBFA22CCBAD1F001161E0 /* AppDelegate.swift in Sources */,
 				1D6EBFA42CCBAD1F001161E0 /* SceneDelegate.swift in Sources */,
 				1D6EBFC02CE7547A001161E0 /* PostCell.swift in Sources */,
+				1DB486CC2D439A2800413EB5 /* Post.swift in Sources */,
 				1DDB13C52D0C3D9200A2CD08 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
