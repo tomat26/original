@@ -19,6 +19,7 @@
 		1DB486A92D3A497E00413EB5 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB486A82D3A497E00413EB5 /* UserNotificationsUI.framework */; };
 		1DB486CC2D439A2800413EB5 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB486CB2D439A2800413EB5 /* Post.swift */; };
 		1DB486CF2D43A7B400413EB5 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = 1DB486CE2D43A7B400413EB5 /* Cloudinary */; };
+		1DB486D22D4A2F7800413EB5 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 1DB486D12D4A2F7800413EB5 /* FirebaseDatabase */; };
 		1DDB13C52D0C3D9200A2CD08 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDB13C42D0C3D9200A2CD08 /* CameraViewController.swift */; };
 		1DDB13C72D1E384300A2CD08 /* DelaGothicOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DDB13C62D1E384300A2CD08 /* DelaGothicOne-Regular.ttf */; };
 /* End PBXBuildFile section */
@@ -48,6 +49,7 @@
 			files = (
 				1DB486A92D3A497E00413EB5 /* UserNotificationsUI.framework in Frameworks */,
 				1DB486A72D3A496300413EB5 /* UserNotifications.framework in Frameworks */,
+				1DB486D22D4A2F7800413EB5 /* FirebaseDatabase in Frameworks */,
 				1DB486CF2D43A7B400413EB5 /* Cloudinary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,6 +128,7 @@
 			name = original;
 			packageProductDependencies = (
 				1DB486CE2D43A7B400413EB5 /* Cloudinary */,
+				1DB486D12D4A2F7800413EB5 /* FirebaseDatabase */,
 			);
 			productName = original;
 			productReference = 1D6EBF9E2CCBAD1F001161E0 /* original.app */;
@@ -157,6 +160,7 @@
 			mainGroup = 1D6EBF952CCBAD1F001161E0;
 			packageReferences = (
 				1DB486CD2D43A7B400413EB5 /* XCRemoteSwiftPackageReference "cloudinary_ios" */,
+				1DB486D02D4A2F7800413EB5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 1D6EBF9F2CCBAD1F001161E0 /* Products */;
 			projectDirPath = "";
@@ -431,6 +435,14 @@
 				minimumVersion = 5.1.0;
 			};
 		};
+		1DB486D02D4A2F7800413EB5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.7.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -438,6 +450,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1DB486CD2D43A7B400413EB5 /* XCRemoteSwiftPackageReference "cloudinary_ios" */;
 			productName = Cloudinary;
+		};
+		1DB486D12D4A2F7800413EB5 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1DB486D02D4A2F7800413EB5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
