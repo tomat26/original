@@ -7,6 +7,9 @@
 
 import UIKit
 import Cloudinary
+import Firebase
+import FirebaseFirestore
+
 
 class CameraViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
@@ -19,9 +22,13 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBOutlet var missionLabel3: UILabel!
     @IBOutlet var missionLabel4: UILabel!
     @IBOutlet var saveButton: UIButton!
+    @IBOutlet var postButton: UIButton!
     
     let config = CLDConfiguration(cloudName: "dio0w7psc", secure: true)
     var cloudinary: CLDCloudinary?
+    
+    let db = Firestore.firestore()
+       var posts: [Post] = []
     
     var showMission: String!
     var missions: [String] = []
@@ -34,6 +41,9 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         missionLabel.isHidden = true
         missionLabel4.isHidden = true
         saveButton.isHidden = true
+        postButton.isHidden = true
+        cameraButton.isHidden = false
+        
         
         //        missions =
         //        ["今日の服を写そう"]
@@ -128,6 +138,8 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         missionLabel.isHidden = false
         missionLabel4.isHidden = false
         saveButton.isHidden = false
+        postButton.isHidden = false
+        cameraButton.isHidden = true
         
     }
     
@@ -245,20 +257,20 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         // 投稿画像が空でないことを確認
         guard let postImage = photoImageView.image else {
             // サムネイル画像が空の場合の処理
-            showAlert(message: "サムネイル画像を選択してください。")
+            showAlert(title: "入力エラー", message: "サムネイル画像を選択してください。")
             return
         }
         
         Task {
             let postImageURL = await uploadPostImage(image: postImage)
             // 空でない場合、取得したtextとthumbnailを引数として渡して保存処理
-            savePostToFirestore(title: title, postImageURL: postImageURL)
+            savePostToFirestore(postImageURL: postImageURL)
         }
     }
     
     // アラートを表示する関数
-    func showAlert(message: String) {
-        let alertController = UIAlertController(title: "入力エラー", message: message, preferredStyle: .alert)
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(action)
         present(alertController, animated: true, completion: nil)
@@ -304,23 +316,23 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         }
     }
     
-    func savePostToFirestore(title: String, thumbnailURL: String) {
+    func savePostToFirestore(postImageURL: String) {
            let uuid = UUID()
            let currentDate = Date()
            let formatter = DateFormatter()
            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
            let createdAt = formatter.string(from: currentDate)
 
-           print(thumbnailURL)
+           print(postImageURL)
 
-           let post = Post(id: uuid.uuidString, title: title, userId: "exampleUserId", postImages: [], thumbnailPost: thumbnailURL, createdAt: createdAt)
+        let post = Post(id: uuid.uuidString, profileImage: "", username: "exampleUserId", postImage: "", comments: postImageURL, goodButton: "", userId: "",  createdAt: "")
 
            let postData: [String: Any] = [
                "id": post.id,
-               "title": post.title,
+               "profileImage": post.profileImage,
                "userId": post.userId,
-               "postImages": post.postImages,
-               "thumbnailPost": post.thumbnailPost,
+               "postImage": post.postImage,
+               "goodButton": post.goodButton,
                "createdAt": createdAt
            ]
 
@@ -328,15 +340,14 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
                if let error = error {
                    print("Error saving post to Firestore: \(error.localizedDescription)")
                    DispatchQueue.main.async {
-                       self.showAlert(message: "投稿の保存に失敗しました。再試行してください。")
+                       self.showAlert(title: "エラー", message: "投稿の保存に失敗しました。再試行してください。")
                    }
                } else {
                    print("Post saved successfully!")
                    DispatchQueue.main.async {
                        self.posts.append(post)
-                       self.collectionView.reloadData()
 
-                       self.completeAlert(message: "投稿できました！")
+                       self.showAlert(title: "成功！", message: "投稿できました！")
                    }
                }
            }
