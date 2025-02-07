@@ -32,6 +32,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     
     var showMission: String!
     var missions: [String] = []
+    var missionPhoto: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -123,6 +124,8 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
             return
         }
         
+        missionPhoto = originalImage
+        
         let imageWithText = drawText(image: originalImage)
         
         photoImageView.image = imageWithText
@@ -151,7 +154,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         var fontSize = image.size.width / 10
         
         // 最大フォントサイズと最小フォントサイズを設定
-        let maxFontSize: CGFloat = image.size.width / 5
+        let _: CGFloat = image.size.width / 5
         let minFontSize: CGFloat = 10
         
         let textFontAttributes: [NSAttributedString.Key: Any] = [
@@ -255,7 +258,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBAction func postButtonTapped(_ sender: UIButton) {
         
         // 投稿画像が空でないことを確認
-        guard let postImage = photoImageView.image else {
+        guard let postImage = missionPhoto else {
             // サムネイル画像が空の場合の処理
             showAlert(title: "入力エラー", message: "サムネイル画像を選択してください。")
             return
@@ -325,7 +328,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
 
            print(postImageURL)
 
-        let post = Post(id: uuid.uuidString, profileImage: "", username: "exampleUserId", postImage: "", comments: postImageURL, goodButton: "", userId: "",  createdAt: "")
+        let post = Post(id: uuid.uuidString, profileImage: "", username: "exampleUserId", postImage: postImageURL, comments: "", goodButton: "", userId: "",  createdAt: "")
 
            let postData: [String: Any] = [
                "id": post.id,
@@ -352,7 +355,4 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
                }
            }
        }
-
-    
-    
 }

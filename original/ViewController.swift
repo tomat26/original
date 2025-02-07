@@ -34,6 +34,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         // 通知の許可をリクエスト
         requestNotificationAuthorization()
             
+        
+        // 通知の重複を防ぐため、最初に既存の通知を削除
+               UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["dailyMission"])
             // 通知をスケジュール
         scheduleRandomDailyNotification()
     }
@@ -53,6 +56,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     // MARK: - 通知をスケジュール
     func scheduleRandomDailyNotification() {
         let content = UNMutableNotificationContent()
+      
+
         content.title = "Mission!"
         content.sound = .default
         
@@ -87,7 +92,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: "dailyMission", content: content, trigger: trigger)
+
         
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
