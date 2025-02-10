@@ -37,6 +37,8 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        cloudinary = CLDCloudinary(configuration: config)
+        
         missionLabel2.isHidden = false
         missionLabel3.isHidden = false
         missionLabel.isHidden = true
