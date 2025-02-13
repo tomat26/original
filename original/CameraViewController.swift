@@ -296,7 +296,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
             let uniquePublicId = "thumbnail_\(UUID().uuidString)"
             let params = CLDUploadRequestParams().setPublicId(uniquePublicId)
             
-            uploader.upload(data: imageData, uploadPreset: "manga_thumbnail", params: params, progress: { progress in
+            uploader.upload(data: imageData, uploadPreset: "post_image", params: params, progress: { progress in
                 print("アップロード進行中: \(progress.fractionCompleted * 100)%")
             }) { result, error in
                 guard !isResumed else { return }
