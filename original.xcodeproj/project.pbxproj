@@ -65,7 +65,6 @@
 			isa = PBXGroup;
 			children = (
 				1DB486D32D4CDA9B00413EB5 /* GoogleService-Info.plist */,
-				1DB486CA2D4399E900413EB5 /* Model */,
 				1D6EBFA02CCBAD1F001161E0 /* original */,
 				1D6EBF9F2CCBAD1F001161E0 /* Products */,
 				1DB486A52D3A496200413EB5 /* Frameworks */,
@@ -83,6 +82,7 @@
 		1D6EBFA02CCBAD1F001161E0 /* original */ = {
 			isa = PBXGroup;
 			children = (
+				1DB486CA2D4399E900413EB5 /* Model */,
 				1D6EBFA12CCBAD1F001161E0 /* AppDelegate.swift */,
 				1D6EBFA32CCBAD1F001161E0 /* SceneDelegate.swift */,
 				1D6EBFA52CCBAD1F001161E0 /* ViewController.swift */,

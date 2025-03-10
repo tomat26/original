@@ -13,6 +13,7 @@ import FirebaseFirestore
 
 class CameraViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    
     var number: Int!
     
     @IBOutlet var photoImageView: UIImageView!
@@ -60,31 +61,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         missionLabel2.text = showMission
         
         
-        //        switch number {
-        //        case 0:
-        //                    missionLabel.text = "水や鏡などに映った面白い反射を撮ってみよう"
-        //            showMision =
-        //                case 1:
-        //                    missionLabel.text = "写真の中に自分の指を隠して撮影してみよう"
-        //                case 2:
-        //                    missionLabel.text = "わざと写真を逆さまにして撮ってみよう"
-        //                case 3:
-        //                    missionLabel.text = "しましま模様があるものを見つけよう"
-        //                case 4:
-        //                    missionLabel.text = "日本的なものを撮影してみよう"
-        //                case 5:
-        //                    missionLabel.text = "未来を感じさせる何かを撮影しよう"
-        //                case 6:
-        //                    missionLabel.text = "左右対称の構図で撮影してみよう"
-        //                case 7:
-        //                    missionLabel.text = "何かのマークやロゴを見つけて撮影しよう"
-        //                case 8:
-        //                    missionLabel.text = "今日の服を写そう"
-        //                case 9:
-        //                    missionLabel.text = "英語が書かれているものを見つけて撮影"
-        //                default:
-        //                    missionLabel.text = "ミッションが見つかりませんでした"
-        //                }
+        
         
         cameraButton.layer.borderColor = UIColor.black.cgColor  // 枠線の色
         cameraButton.layer.borderWidth = 1.0 // 枠線の太さ
@@ -131,12 +108,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         let imageWithText = drawText(image: originalImage)
         
         photoImageView.image = imageWithText
-        //
-        //        let image = info[.originalImage] as! UIImage
-        //        let size = CGSize(width: image.size.width / 8, height: image.size.height / 8)
-        //        let resizedImage = UIGraphicsImageRenderer(size: size).image { _ in image.draw(in: CGRect(origin: .zero, size: size))
-        
-        //
+       
         missionLabel2.isHidden = true
         missionLabel3.isHidden = true
         cameraButton.isHidden = true
@@ -205,43 +177,6 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         
         return newImage!
     }
-    
-    
-    //    func drawMaskImage(image: UIImage) -> UIImage{
-    //
-    //        let maskImage = UIImage(named: "post1")!
-    //
-    //        UIGraphicsBeginImageContext(image.size)
-    //
-    //        image.draw(in: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
-    //
-    //        let margin: CGFloat = 50.0
-    //        let maskRect = CGRect(x: image.size.width - maskImage.size.width - margin, y: image.size.height - maskImage.size.height - margin, width: maskImage.size.width, height: maskImage.size.height)
-    //
-    //        maskImage.draw(in: maskRect)
-    //
-    //        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-    //
-    //        UIGraphicsEndImageContext()
-    //
-    //        return newImage!
-    //    }
-    //
-    //    @IBAction func onTappedTextButton() {
-    //        if photoImageView.image != nil {
-    //            photoImageView.image = drawText(image: photoImageView.image!)
-    //        } else {
-    //            print("画像がありません")
-    //        }
-    //    }
-    
-    //    @IBAction func onTappedIllustButton() {
-    //        if photoImageView.image != nil {
-    //            photoImageView.image = drawMaskImage(image: photoImageView.image!)
-    //        } else {
-    //            print("画像がありません")
-    //        }
-    //    }
     
     
     
@@ -330,14 +265,16 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
 
            print(postImageURL)
 
-        let post = Post(id: uuid.uuidString, profileImage: "", username: "exampleUserId", postImage: postImageURL, comments: "", goodButton: "", userId: "",  createdAt: "")
+        let post = Post(id: uuid.uuidString, profileImage: "", username: "exampleUserId", postImage: postImageURL, comments: "", goodButton: "", userId: "",  createdAt: createdAt)
 
            let postData: [String: Any] = [
                "id": post.id,
                "profileImage": post.profileImage,
-               "userId": post.userId,
+               "username": post.username,
                "postImage": post.postImage,
+               "comments": post.comments,
                "goodButton": post.goodButton,
+               "userId": post.userId,
                "createdAt": createdAt
            ]
 
