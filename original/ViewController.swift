@@ -47,6 +47,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetchPosts()
+        
         
         collectionView.dataSource = self
         //　　  ②この行を追加して、CollectionViewのセルの大きさを調節できるようにする
@@ -165,26 +167,31 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 return
             }
             
+            
+            
             // 取得したデータを辞書から`Post`型に変換して追加
             self.posts = querySnapshot?.documents.compactMap { document -> Post? in
                 let data = document.data()
                 
-                // 必要なフィールドを安全に取り出してPost型を生成
-                let id = data["id"] as? String ?? "defaultId"  // デフォルト値を設定
-                let profileImage = data["profileImage"] as? String ?? "defaultprofileImage"  // デフォルト値を設定
-                let username = data["username"] as? String ?? "defaultusername"  // デフォルト値を設定
-                let postImageURL = data["postImages"] as? String ?? "No postImage"  // デフォルト値を設定
-                let comments = data["comments"] as? String ?? "No comments"  // デフォルト値を設定
-                let goodButton = data["goodButton"] as? String ?? "No goodButton"  // デフォルト値を設定
-                let userId = data["userId"] as? String ?? "defaultUserId"  // デフォルト値を設定
-                let createdAt = data["createdAt"] as? String ?? "No Date"  // createdAtを追加（デフォルト値）
-               
+
                 
+                // 必要なフィールドを安全に取り出してPost型を生成
+                var id = data["id"] as? String ?? "defaultId"  // デフォルト値を設定
+                var profileImage = data["profileImage"] as? String ?? "defaultprofileImage"  // デフォルト値を設定
+                var username = data["username"] as? String ?? "defaultusername"  // デフォルト値を設定
+                var postImageURL = data["postImages"] as? String ?? "No postImage"  // デフォルト値を設定
+                var comments = data["comments"] as? String ?? "No comments"  // デフォルト値を設定
+                var goodButton = data["goodButton"] as? String ?? "No goodButton"  // デフォルト値を設定
+                var userId = data["userId"] as? String ?? "defaultUserId"  // デフォルト値を設定
+                var createdAt = data["createdAt"] as? String ?? "No Date"  // createdAtを追加（デフォルト値）
+               
+//                 if  profileImage =
                 
                 // 必要なデータがない場合でもデフォルト値を使ってPost型を生成
-                return Post(id: id, profileImage: "", username: "exampleUserId", postImage: postImageURL, comments: "", goodButton: "", userId: "",  createdAt: createdAt)
+                return Post(id: id, profileImage: profileImage, username: username, postImage: postImageURL, comments: comments, goodButton: goodButton, userId: userId,  createdAt: createdAt)
             } ?? []  // compactMapがnilを返す場合は空の配列を返す
             
+            print(self.posts)
             // createdAtをDate型に変換してソート（新しい順）
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"  // createdAtの日付フォーマットを指定
