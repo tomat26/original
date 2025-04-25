@@ -44,6 +44,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     let db = Firestore.firestore()
     var posts: [Post] = []
     
+    let image = UIImage(named: "")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -145,9 +147,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCell", for: indexPath) as! PostCell
         
         // 仮のデータ
-        cell.setupCell(profile: UIImage(named:posts[indexPath.row].profileImage)!,
+        cell.setupCell(profile: (UIImage(named:posts[indexPath.row].profileImage)) ?? UIImage(named: "post1"_)! /*?? UIImage(named: "post2")*/,
                        username: "Username",
-                       post: UIImage(named: posts[indexPath.row].postImage)!)
+                       post: UIImage(named: posts[indexPath.row].postImage)!
+//        var test: String? = nil
+//
+//        print(test ?? "いい")
         
         return cell
     }
